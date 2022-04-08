@@ -19,4 +19,6 @@ public class Professeur {
     private String password;
     @ManyToMany(mappedBy = "professeurs", fetch = FetchType.EAGER)
     List<Etudiant> etudiants = new ArrayList<>();
+    @OneToMany(mappedBy = "professeur", fetch = FetchType.EAGER)
+    List<Questionnaire> questionnaires = new ArrayList<>();
 }
