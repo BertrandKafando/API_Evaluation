@@ -1,4 +1,8 @@
 package ma.enset.projet_android.repositories;
 
-public interface ProfesseurRepository {
+import ma.enset.projet_android.entities.Professeur;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface ProfesseurRepository extends JpaRepository<Professeur, Long> {
+
 }
