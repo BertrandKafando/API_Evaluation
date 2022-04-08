@@ -1,5 +1,6 @@
 package ma.enset.projet_android.entities;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -17,7 +18,9 @@ public class Questionnaire {
     @OneToMany(mappedBy = "questionnaire",fetch = FetchType.EAGER)
     List<Question>questions=new ArrayList<>();
     @ManyToOne()
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private Professeur professeur;
     @ManyToMany()
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     List<Etudiant>etudiants=new ArrayList<>();
 }

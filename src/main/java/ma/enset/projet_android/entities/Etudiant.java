@@ -1,5 +1,6 @@
 package ma.enset.projet_android.entities;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -18,7 +19,9 @@ public class Etudiant {
     private String email;
     private String password;
     @ManyToMany()
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     List <Professeur> professeurs = new ArrayList<>();
     @ManyToMany(mappedBy = "etudiants", fetch = FetchType.EAGER)
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     List<Questionnaire> questionnaires = new ArrayList<>();
 }
