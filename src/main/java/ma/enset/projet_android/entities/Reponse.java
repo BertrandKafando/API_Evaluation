@@ -1,5 +1,6 @@
 package ma.enset.projet_android.entities;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 
 import javax.persistence.*;
@@ -12,5 +13,6 @@ public class Reponse {
     private String answer;
     private boolean correct;
     @ManyToOne()
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private Question question;
 }

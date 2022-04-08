@@ -17,7 +17,7 @@ public class Question {
     private String title;
     private int score;
     @OneToMany(mappedBy = "question",fetch = FetchType.EAGER)
-    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     List<Reponse>reponses=new ArrayList<>();
     @ManyToOne()
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)

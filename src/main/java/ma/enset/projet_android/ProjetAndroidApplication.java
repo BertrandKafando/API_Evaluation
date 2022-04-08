@@ -59,6 +59,7 @@ public class ProjetAndroidApplication {
                         questionnaire.setTitle("informatique 2");
                         questionnaire.setQuestions(questions);
                         questionnaire.setProfesseur(professeur);
+                        questionnaire.setEtudiants(etudiants);
 
                         questionnaireRepository.save(questionnaire);
 

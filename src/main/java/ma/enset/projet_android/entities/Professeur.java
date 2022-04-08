@@ -22,6 +22,6 @@ public class Professeur {
      @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     List<Etudiant> etudiants = new ArrayList<>();
     @OneToMany(mappedBy = "professeur", fetch = FetchType.EAGER)
-    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     List<Questionnaire> questionnaires = new ArrayList<>();
 }

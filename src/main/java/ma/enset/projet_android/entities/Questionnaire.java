@@ -15,12 +15,13 @@ public class Questionnaire {
     private Long questionnaireId;
     private String title;
     private String description;
-    @OneToMany(mappedBy = "questionnaire",fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "questionnaire")
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     List<Question>questions=new ArrayList<>();
     @ManyToOne()
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private Professeur professeur;
     @ManyToMany()
-    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     List<Etudiant>etudiants=new ArrayList<>();
 }
