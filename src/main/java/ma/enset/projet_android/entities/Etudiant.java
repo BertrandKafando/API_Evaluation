@@ -10,13 +10,13 @@ import java.util.List;
 
 @Entity
 @Data @AllArgsConstructor @NoArgsConstructor
-public class Professeur {
+public class Etudiant {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long profId;
+    private Long etudiantId;
     private String firstName;
     private String lastName;
     private String email;
     private String password;
-    @ManyToMany(mappedBy = "professeurs", fetch = FetchType.EAGER)
-    List<Etudiant> etudiants = new ArrayList<>();
+    @ManyToMany(fetch = FetchType.EAGER)
+    List <Professeur> professeurs = new ArrayList<>();
 }
