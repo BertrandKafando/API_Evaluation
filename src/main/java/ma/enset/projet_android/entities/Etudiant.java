@@ -17,7 +17,7 @@ public class Etudiant {
     private String lastName;
     private String email;
     private String password;
-    @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToMany()
     List <Professeur> professeurs = new ArrayList<>();
     @ManyToMany(mappedBy = "etudiants", fetch = FetchType.EAGER)
     List<Questionnaire> questionnaires = new ArrayList<>();
