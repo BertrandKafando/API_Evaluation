@@ -15,6 +15,8 @@ public class Question {
     private Long questionId;
     private String title;
     private int score;
-    @OneToMany(mappedBy = "question")
+    @OneToMany(mappedBy = "question",fetch = FetchType.EAGER)
     List<Reponse>reponses=new ArrayList<>();
+    @ManyToOne()
+    private Questionnaire questionnaire;
 }
