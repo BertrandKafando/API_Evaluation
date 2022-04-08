@@ -15,7 +15,7 @@ public class Questionnaire {
     private Long questionnaireId;
     private String title;
     private String description;
-    @OneToMany(mappedBy = "questionnaire")
+    @OneToMany(mappedBy = "questionnaire",fetch = FetchType.EAGER)
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     List<Question>questions=new ArrayList<>();
     @ManyToOne()
