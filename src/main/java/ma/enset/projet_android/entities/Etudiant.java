@@ -16,6 +16,7 @@ public class Etudiant {
     private Long etudiantId;
     private String firstName;
     private String lastName;
+    private String userName;
     private String email;
     private String password;
     @ManyToMany()

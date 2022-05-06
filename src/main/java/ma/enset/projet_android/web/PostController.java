@@ -21,4 +21,10 @@ public class PostController {
             etudiantRepository.save(etudiant);
         }
     }
+
+    @GetMapping("/etudiant")
+    public Etudiant etudiant(@RequestParam(name = "q",defaultValue = "") String keyword){
+        Etudiant etudiant = etudiantRepository.findByUserNameContains(keyword);
+        return etudiant;
+    }
 }

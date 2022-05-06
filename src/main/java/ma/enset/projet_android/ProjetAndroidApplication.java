@@ -42,16 +42,20 @@ public class ProjetAndroidApplication {
             questions.add(question);
 
           Etudiant etudiant=new Etudiant();
-                    etudiant.setFirstName("assmi");
-                    etudiant.setEmail("dddl@gmail");
+                    etudiant.setFirstName("toto");
+                    etudiant.setEmail("toto@mail.com");
+                    etudiant.setUserName("toto");
+                    etudiant.setPassword("1234");
             etudiantRepository.save(etudiant);
 
             List<Etudiant>etudiants=new ArrayList<>();
             etudiants.add(etudiant);
 
           Professeur professeur =new Professeur() ;
-          professeur.setFirstName("KAFAND0");
-          professeur.setEmail("kaf@gmail");
+          professeur.setFirstName("momo");
+          professeur.setEmail("momo@mail.com");
+          professeur.setUserName("momo");
+          professeur.setPassword("azerty");
           professeur.setEtudiants(etudiants);
           professeurRepository.save(professeur);
 
@@ -62,6 +66,10 @@ public class ProjetAndroidApplication {
                         questionnaire.setEtudiants(etudiants);
 
                         questionnaireRepository.save(questionnaire);
+                        question.setQuestionnaire(questionnaire);
+                        questionRepository.save(question);
+                        rep.setQuestion(question);
+                        reponseRepository.save(rep);
 
 
       }  ;
